@@ -14,10 +14,7 @@ app.use(express.static(publicPath));
 io.on('connection',(socket) => {
     console.log("A new user just connect");
 
-    socket.emit('NewMessage',{
-        from : "Mike",
-        text: "Sad"
-    });
+    
     socket.emit('NewMessage',{
         from: "Admin",
         text: "Welcome",
