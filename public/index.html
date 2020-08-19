@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <p> Welcome </p>
+    <p> Welcome to idle gossip app.</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        let socket =  io();
+        socket.on('connect',() => {
+            console.log('connected to the sever');
+        });
+        socket.on('disconnect',() => {
+            console.log('disconnected from sever');
+        })
+    </script>
 </body>
 </html>
