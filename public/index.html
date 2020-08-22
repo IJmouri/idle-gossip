@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Idle Gossip</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <p> Welcome to idle gossip app.</p>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
+<body class="centered-form">
+    <div class="centered-form__form">
+        <form action="chat.html">
+            <div class="form-field">
+                <h3>Join Gossip</h3>
+            </div>
+            <div class="form-field">
+                <label>Display name</label>
+                <input type="text" name="name" autofocus>
+              </div>
+              <div class="form-field">
+                <label>Room name</label>
+                <input type="text" name="room" autofocus>
+              </div>
+              <div class="form-field">
+                <button>Join</button>
+              </div>
+        </form>
+    </div>
 </body>
 </html>
