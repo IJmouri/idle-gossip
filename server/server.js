@@ -8,11 +8,11 @@ const port = process.env.PORT || 3000
 
 const { generateMessage, generateLocationMessage } = require("./details/message");
 const isRealString = require('./details/isRealString');
-const { User } = require('./details/users');
+const { Users } = require('./details/users');
 let app = express();
 let server = http.createServer(app);
 let io = socketIO(server);
-let users = new User();
+let users = new Users();
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
         io.to(params.room).emit('updateUserList', users.getUserList(params.room));
 
 
-        socket.emit('NewMessage', generateMessage('Admin', 'Welcome to the Idle Gossip App!'));
+        socket.emit('NewMessage', generateMessage('Admin', `Welcome to the ${params.room}`));
 
         socket.broadcast.to(params.room).emit('NewMessage', generateMessage('Admin', 'New user joined'));
 

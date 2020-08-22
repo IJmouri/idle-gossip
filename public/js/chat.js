@@ -22,6 +22,7 @@ socket.on('disconnect', function () {
 });
 
 socket.on('updateUserList', function (users) {
+//    console.log(users);
     let ol = document.createElement('ol');
     users.forEach(function (user) {
         let li = document.createElement('li');

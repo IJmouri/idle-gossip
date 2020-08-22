@@ -4,7 +4,7 @@
 //     room: 'node'
 // }]
 
-class User {
+class Users {
     constructor(){
         this.users = [];
     }
@@ -32,9 +32,10 @@ class User {
         if(user){
             this.users = this.users.filter((user) => user.id !== id);
         }
+
+        return user;
     }
 }
 
-module.exports = {User};
+module.exports = {Users};
 
-let me = new User('wdj',27);
